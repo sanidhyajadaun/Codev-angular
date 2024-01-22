@@ -1,0 +1,42 @@
+.listing {
+    background: white;
+    border: 1px solid black;
+    border-radius: 20px;
+    padding-bottom: 30px;
+    width: 300px;
+    height: 500px; /* Set a fixed height for the entire component */
+    display: flex;
+    flex-direction: column;
+  }
+  .listing-heading {
+    color: black;
+    padding: 10px 20px 0 20px;
+  }
+
+  .listing-photo {
+    height: 250px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 20px 20px 0 0;
+  }
+  .listing-location {
+    padding: 5px 20px 0px 6px;
+  }
+  .listing-location::before {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Updated value */
+    content: url("/assets/location-pin.svg") / "";
+  }
+  
+  section.listing a {
+    padding-left: 20px;
+    text-decoration: none;
+    color: white;
+    height: 150px;
+  }
+  
+  section.listing a::after {
+    content: "\203A";
+    margin-left: 5px;
+  }
+
+  
