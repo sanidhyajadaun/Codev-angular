@@ -1,0 +1,28 @@
+/* employeelist.component.css */
+
+.employee-list-container {
+    margin: 20px;
+  }
+  
+  h2 {
+    color: #333;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .employee-item {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #f9f9f9;
+    cursor: pointer;
+  }
+  
+  .employee-item:hover {
+    background-color: #e0e0e0;
+  }
+  

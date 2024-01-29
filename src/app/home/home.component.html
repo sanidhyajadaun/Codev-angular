@@ -1,0 +1,91 @@
+<div class="container-fluid">
+  <h3>Employee Enrollment Form</h3>
+  <div class="alert alert-danger" *ngIf="errorMsg">
+    {{errorMsg}}
+  </div>
+  <form #userForm="ngForm" *ngIf="!submitted" (ngSubmit)="onSubmit(userForm)" novalidate>
+
+    <!-- {{userForm.value | json}}
+    <hr/>
+    {{userModel | json}} -->
+
+
+    <!-- To check form validity -->
+    <!-- {{userForm.form.valid}} -->
+
+    <div class="form-group">
+      <label>Name</label>
+      <input type="text" required #name="ngModel" 
+        [class.is-invalid]="name.invalid && name.touched" class="form-control" 
+        name="name" [(ngModel)]="userModel.name"/>
+      <small class="text-danger" [class.d-none]="name.valid || name.untouched">Name is required</small>
+    </div>
+
+    <!-- #name="ngModel" -->
+    <!-- {{name.valid}} -->
+
+    <div class="form-group">
+        <label>Email</label>
+        <input type="email" required #email="ngModel" 
+          pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+          [class.is-invalid]="email.invalid && email.touched" class="form-control" 
+          name="email" [(ngModel)]="userModel.email"/>
+        <div *ngIf="email.errors && (email.invalid && email.touched)">
+          <small class="text-danger" *ngIf="email.errors['required']">Email is required</small>
+          <small class="text-danger" *ngIf="email.errors['pattern']">Invalid email format</small>
+        </div>
+    </div>
+      
+      
+
+    <div class="form-group">
+        <label>Phone</label>
+        <input type="tel" #phone="ngModel" pattern="^\d{10}$" required 
+          [class.is-invalid]="phone.invalid && phone.touched" class="form-control" 
+          name="phone" [(ngModel)]="userModel.phone"/>
+        <div *ngIf="phone.errors && (phone.invalid && phone.touched)">
+          <small class="text-danger" *ngIf="phone.errors['required']">Phone number is required</small>
+          <small class="text-danger" *ngIf="phone.errors['pattern']">Phone number must be 10 digits</small>
+        </div>
+    </div>
+      
+
+    <div class="form-group">
+      <Label>Team</Label>
+      <select (blur)="validateTeam(team.value)" (change)="validateTeam(team.value)"  #team="ngModel" 
+      [class.is-invalid]="teamHasError && team.touched" class="custom-select" name="team" [(ngModel)]="userModel.team">
+        <option value="default">Select here</option>
+        <option *ngFor="let team of teams">{{ team }}</option>
+      </select>
+      <small class="text-danger" [class.d-none]="!teamHasError || team.untouched">Please choose a team</small>
+    </div>
+
+    <div class="form-group">
+        <label>Employment Type</label>
+        <select (blur)="validateEmploymentType(type.value)" (change)="validateEmploymentType(type.value)" #type="ngModel" 
+          [class.is-invalid]="employmentTypeHasError && type.touched" class="custom-select" 
+          name="type" [(ngModel)]="userModel.type">
+          <option value="default">Select here</option>
+          <option *ngFor="let empType of types">{{ empType }}</option>
+        </select>
+        <small class="text-danger" [class.d-none]="!employmentTypeHasError || type.untouched">Please choose an employment type</small>
+      </div>
+      
+
+      <div class="mb-3">
+        <label>Employee Timing</label>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" required name="employeetiming" value="Office Timing" [(ngModel)]="userModel.employeetiming" (change)="validateEmployeeTiming(userModel.employeetiming)">
+          <label class="form-check-label">Office Timing (10am-6:30pm)</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="employeetiming" value="Remote Timing" [(ngModel)]="userModel.employeetiming" (change)="validateEmployeeTiming(userModel.employeetiming)">
+          <label class="form-check-label">Remote Timing (9am-6:30pm)</label>
+        </div>
+        <small class="text-danger" [class.d-none]="!employeetimingHasError || !employeetimingUntouched">Please choose an employee timing</small>
+      </div>
+      
+
+    <button [disabled]="userForm.form.invalid || teamHasError || employmentTypeHasError" class="btn btn-primary" type="submit">Submit Form</button>
+  </form>
+</div>

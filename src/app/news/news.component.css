@@ -1,0 +1,49 @@
+/* Add this style to your global styles or component-specific styles */
+
+.news-container {
+    max-width: 800px;
+    margin: 20px auto;
+  }
+  
+  .news-item {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .news-item h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .news-item p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #666;
+  }
+  
+  .news-item strong {
+    color: #222;
+  }
+  
+  .news-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+  
+  .news-item a {
+    color: #4285f4;
+    text-decoration: none;
+    font-weight: bold;
+    display: block;
+    margin-top: 10px;
+  }
+  
+  .news-item a:hover {
+    text-decoration: underline;
+  }
+  

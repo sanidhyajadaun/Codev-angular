@@ -1,0 +1,5 @@
+[
+    {"name": "Mr Amit", "email": "amit@gmail.com", "phone": "1234567890", "team": "Tech Team", "type": "Full-time", "employeetiming": "Office Timing (10am-6:30pm)"},
+    {"name": "Mr Vivek", "email": "vivek@gmail.com", "phone": "1234512345", "team": "Tech Team", "type": "Full-time", "employeetiming": "Office Timing (10am-6:30pm)"},
+    {"name": "Miss Priya", "email": "priya@gmail.com", "phone": "6789067890", "team": "HR Team", "type": "Full-time", "employeetiming": "Office Timing (10am-6:30pm)"}
+]

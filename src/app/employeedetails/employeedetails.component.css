@@ -1,0 +1,31 @@
+/* employeedetails.component.css */
+
+.employee-details-container {
+    margin: 20px;
+  }
+  
+  .employee-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 15px;
+    background-color: #f9f9f9;
+  }
+  
+  .employee-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+  }
+  
+  .info-label {
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .info-value {
+    flex-grow: 1;
+    margin-left: 10px;
+    color: #666;
+  }
+  

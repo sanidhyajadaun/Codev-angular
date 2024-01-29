@@ -1,0 +1,41 @@
+/* app.component.css */
+
+
+
+
+.brand-logo {
+  height: auto;
+  width: 75px;
+  position: fixed;
+  top: 0px; /* Adjust top spacing as needed */
+  left: 10px;
+}
+
+.navigation {
+  display: flex;
+  gap: 20px;
+  background-color: #333;
+  padding: 8px;
+  border-radius: 2px;
+}
+
+.navigation a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  padding: 8px 16px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.navigation a:hover {
+  background-color: #555;
+}
+
+h1 {
+  text-align: center;
+  color: black;
+  font-size: 40px;
+  margin: 20px;
+}
+

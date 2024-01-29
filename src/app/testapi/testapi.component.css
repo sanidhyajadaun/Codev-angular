@@ -1,0 +1,23 @@
+/* Add this style to your global styles or component-specific styles */
+
+.quote-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  margin: 20px;
+  padding: 10px;
+  border-radius: 8px;
+  background-color: #f0f0f0;
+}
+
+.user-quote {
+  align-self: flex-end;
+  background-color: #4caf50;
+  color: #ffffff;
+}
+
+.author-quote {
+  align-self: flex-start;
+  background-color: #2196f3;
+  color: #ffffff;
+}

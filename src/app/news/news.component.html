@@ -1,0 +1,17 @@
+<!-- news.component.html -->
+
+<div class="news-container" *ngIf="news">
+    <h2>Latest News</h2>
+    <div *ngFor="let article of news.articles" class="news-item">
+      <h3>{{ article.title }}</h3>
+      <p>{{ article.description }}</p>
+      <p><strong>Author:</strong> {{ article.author || "Not available" }}</p>
+      <p><strong>Source:</strong> {{ article.source.name }}</p>
+      <p><strong>Published at:</strong> {{ article.publishedAt | date }}</p>
+      <img [src]="article.urlToImage" alt="{{ article.title }}" />
+      <div *ngIf="article.content">
+        <p>{{ article.content }}</p>
+      </div>
+      <a [href]="article.url" target="_blank">Read More</a>
+    </div>
+</div>

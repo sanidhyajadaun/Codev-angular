@@ -1,0 +1,14 @@
+<!-- testapi.component.html -->
+<div
+  *ngFor="let quote of quotes"
+  [ngClass]="{
+    'quote-container': true,
+    'user-quote': quote.author === 'You',
+    'author-quote': quote.author !== 'You'
+  }"
+>
+  <p>{{ quote.quote }}</p>
+  <p *ngIf="quote.author !== 'You'">
+    <strong>Author:</strong> {{ quote.author }}
+  </p>
+</div>
