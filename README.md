@@ -10,18 +10,50 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+## Features by Component:
+### Reactive Form Component:
+#### Registration Form:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- Username validation with custom directive for forbidden names and minimum length.
+- Email validation with pattern matching.
+- Password and Confirm Password validation using a custom validator.
+- Phone number validation with custom directive allowing only numeric input.
+- OTP input with dynamic control creation.
+- Address details with City, State, and Postal Code.
+- Subscription checkbox for promotional offers.
+- File upload for Profile Image.
+- Form-wide validation for matching passwords.
 
-## Running unit tests
+#### Form Validation:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- Custom validation for minimum username length and forbidden names.
+- Dynamic phone number validation with length check.
 
-## Running end-to-end tests
+### Local Storage Handling:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+- Loading data from local storage to populate the form (commented out in the code).
 
+### Template-Based Form Component:
+#### News API:
+
+- Fetching news articles from a News API.
+- Displaying news articles in the template.
+
+#### Test API:
+
+- Interaction with a test API (connectivity to localhost server).
+- Displaying API data in the template.
+
+### Shared Directive:
+#### Allownumbersonly Directive:
+- Allowing only numeric input in specified form fields (Phone Number).
+#### Allowtextonly Directive:
+- Allowing only text input in specified form fields (Username).
+#### digitsonly Directive:
+- Allowing only digit input in OTP field.
+#### otp-focus Directive:
+- Fowardung and backwarding of OTP boxes.
+- 
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
