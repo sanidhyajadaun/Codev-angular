@@ -6,7 +6,7 @@
     <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
         <div class="form-group">
             <label>Username</label>
-            <input [class.is-invalid]="userName?.invalid && userName?.touched" formControlName="userName" type="text" class="form-control">
+            <input [class.is-invalid]="userName?.invalid && userName?.touched" formControlName="userName" type="text" class="form-control" appAllowtextonly>
             <div *ngIf="userName?.invalid && userName?.touched">
                 <small *ngIf="userName?.hasError('required')" class="text-danger">Username is required</small>
                 <small *ngIf="userName?.hasError('minlength')" class="text-danger">Username must be at least 3 characters</small>
@@ -39,6 +39,47 @@
             <small *ngIf="registrationForm.hasError('misMatch')" class="text-danger">Password do not match</small>
         </div>
 
+        <!-- reactive-form.component.html -->
+        <!-- <div class="form-group">
+            <label>Phone Number</label>
+            <input formControlName="phoneNumber" type="text" appAllownumbersonly class="form-control" maxlength="10" required>
+            <small *ngIf="registrationForm.controls['phoneNumber'].hasError('maxlength')" class="text-danger">Phone number must be 10 digits</small>
+        </div> -->
+
+        
+
+        <div class="form-group">
+            <label>Phone Number</label>
+            <input formControlName="phoneNumber" type="tel" appAllownumbersonly class="form-control" maxlength="10" required inputmode="numeric" pattern="[0-9]*">
+            
+            <div *ngIf="registrationForm.get('phoneNumber')?.invalid && registrationForm.get('phoneNumber')?.touched">
+                <small *ngIf="registrationForm.get('phoneNumber')?.hasError('required')" class="small-error">Phone number is required</small>
+                <small *ngIf="registrationForm.get('phoneNumber')?.hasError('pattern') && !registrationForm.get('phoneNumber')?.hasError('required')" class="small-error">Please enter only numeric digits</small>
+                <small *ngIf="registrationForm.get('phoneNumber')?.hasError('maxlength') && !registrationForm.get('phoneNumber')?.hasError('required')" class="small-error">Phone number must be 10 digits</small>
+            </div>
+        </div>
+
+
+        <!-- <div class="form-group">
+            <label>OTP</label>
+            <div class="otp-input-container">
+              <input formControlName="otp1" type="text" maxlength="1" class="form-control otp-input" appOtpFocus appDigitsOnly>
+              <input formControlName="otp2" type="text" maxlength="1" class="form-control otp-input" appOtpFocus appDigitsOnly>
+              <input formControlName="otp3" type="text" maxlength="1" class="form-control otp-input" appOtpFocus appDigitsOnly>
+              <input formControlName="otp4" type="text" maxlength="1" class="form-control otp-input" appOtpFocus appDigitsOnly>
+            </div>
+        </div> -->
+
+        <div class="form-group">
+            <label>OTP</label>
+            <div class="otp-input-container">
+              <input *ngFor="let digit of otpDigits; let i = index" [formControlName]="'otp' + (i + 1)"
+                     type="text" maxlength="1" class="form-control otp-input" appOtpFocus appAllownumbersonly>
+            </div>
+        </div>
+          
+  
+
         <div formGroupName="address">
             <div class="form-group">
                 <label>City</label>
@@ -64,7 +105,7 @@
 
         <!-- Inside reactive-form.component.html -->
 <!-- Add file input for image upload -->
-<br>
+        <br>
         <div class="form-group">
             <label>Profile Image</label>
             <input type="file" (change)="onFileSelected($event)" formControlName="profileImage" class="form-control">

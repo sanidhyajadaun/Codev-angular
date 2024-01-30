@@ -1,7 +1,7 @@
 // form-data.component.ts
 
 import { Component, OnInit } from '@angular/core';
-import { RegistrationService } from '../registration.service';
+import { RegistrationService } from '../Services/registration.service';
 
 @Component({
   selector: 'app-form-data',

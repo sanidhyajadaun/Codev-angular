@@ -3,7 +3,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { INews } from './news';
+import { INews } from '../Interfaces/news';
 
 @Injectable({
   providedIn: 'root'

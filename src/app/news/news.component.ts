@@ -1,8 +1,8 @@
 // news.component.ts
 
 import { Component, OnInit } from '@angular/core';
-import { NewsService } from '../news-data.service';
-import { INews } from '../news';
+import { NewsService } from '../Services/news-data.service';
+import { INews } from '../Interfaces/news';
 
 @Component({
   selector: 'app-news',

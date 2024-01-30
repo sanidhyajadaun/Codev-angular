@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { IEmployee } from './employee';
+import { IEmployee } from '../Interfaces/employee';
 import { Observable } from 'rxjs';
-import { User } from './user';
+import { User } from '../Interfaces/user';
 // import 'rxjs/add/operator/catch';
 
 @Injectable({

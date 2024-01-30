@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { User } from '../user';
-import { EnrollmentService } from '../enrollment.service';
+import { User } from '../Interfaces/user';
+import { EnrollmentService } from '../Services/enrollment.service';
 
 @Component({
   selector: 'app-home',

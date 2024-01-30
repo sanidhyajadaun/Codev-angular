@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { TestapiService } from '../testapi.service';
-import { BreakingBadQuote } from '../testapi';
+import { TestapiService } from '../Services/testapi.service';
+import { BreakingBadQuote } from '../Interfaces/testapi';
 
 @Component({
   selector: 'app-testapi',

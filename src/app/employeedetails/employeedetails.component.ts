@@ -1,7 +1,7 @@
 // employeedetails.component.ts
 
 import { Component } from '@angular/core';
-import { EmployeeService } from '../employee.service';
+import { EmployeeService } from '../Services/employee.service';
 
 @Component({
   selector: 'app-employeedetails',

@@ -3,6 +3,8 @@ export interface Registration {
   email: string;
   password: string;
   confirmPassword: string;
+  phoneNumber: string;
+  otp: string;
   address: {
     city: string;
     state: string;
